@@ -1,2 +1,2 @@
-# lcl projeto
- Projeto final da disciplina Laboratório de Circuitos Lógicos - Sistema de Segurança Residencial.
+# Sistema de Segurança Residencial (Circuitos Lógicos)
+#### Projeto final da disciplina Laboratório de Circuitos Lógicos.
