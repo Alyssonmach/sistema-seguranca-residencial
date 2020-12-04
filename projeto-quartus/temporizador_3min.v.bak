@@ -1,0 +1,10 @@
+// modulo temporizador de 3 minutos
+module temporizador_3min(clk, clr, hab);
+
+	input clk;
+	input [2:0]clr;
+	output hab;
+	
+	
+	
+endmodule 

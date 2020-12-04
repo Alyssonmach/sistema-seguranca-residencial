@@ -1,0 +1,23 @@
+// modulo display de 7 segmentos
+module display_7segmentos(dados, segmentos);
+
+	input [3:0]dados;
+	output [6:0]segmentos;
+	
+	always *
+		case(dados)
+		0: segmentos = 7'b111_1110;
+		1: segmentos = 7'b011_0000;
+		2: segmentos = 7'b110_1101;
+		3: segmentos = 7'b111_1011;
+		4: segmentos = 7'b011_0011;
+		5: segmentos = 7'b101_1011;
+		6: segmentos = 7'b101_1111;
+		7: segmentos = 7'b111_0000;
+		8: segmentos = 7'b111_1111;
+		9: segmentos = 7'b111_0011;
+		default: segmentos = 7'b000_0000;
+		endcase
+endmodule
+// sistema de segurança residencial
+// alysson machado e matheus victor

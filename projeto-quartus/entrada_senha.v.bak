@@ -1,0 +1,8 @@
+// modulo de cadastro de senha
+module(escolhe_digitos, senha_original, gerador_frequencia, habilitador);
+
+	input [3:0]escolhe_digitos, senha_original;
+	input gerador_frequencia;
+	output habilitador;
+	
+endmodule 

@@ -1,0 +1,127 @@
+|temporizador_3min
+clk => clk.IN1
+clr[0] => clr[0].IN1
+clr[1] => clr_aux2.IN1
+clr[2] => clr_aux1.IN1
+segmentos[0] << contador_modulo3:mod3.port2
+segmentos[1] << contador_modulo3:mod3.port2
+segmentos[2] << contador_modulo5:mod5.port2
+segmentos[3] << contador_modulo5:mod5.port2
+segmentos[4] << contador_modulo5:mod5.port2
+segmentos[5] << contador_decadico:mod10.port2
+segmentos[6] << contador_decadico:mod10.port2
+segmentos[7] << contador_decadico:mod10.port2
+segmentos[8] << contador_decadico:mod10.port2
+hab << contador_modulo2:mod2.port2
+
+
+|temporizador_3min|contador_decadico:mod10
+clk => clk.IN4
+clear => clr_aux.IN1
+s[0] <= s[0].DB_MAX_OUTPUT_PORT_TYPE
+s[1] <= ff_jk:ff2.port4
+s[2] <= ff_jk:ff3.port4
+s[3] <= ff_jk:ff4.port4
+
+
+|temporizador_3min|contador_decadico:mod10|ff_jk:ff1
+clear => q~reg0.ACLR
+clk => q~reg0.CLK
+j => Mux0.IN3
+k => Mux0.IN4
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|temporizador_3min|contador_decadico:mod10|ff_jk:ff2
+clear => q~reg0.ACLR
+clk => q~reg0.CLK
+j => Mux0.IN3
+k => Mux0.IN4
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|temporizador_3min|contador_decadico:mod10|ff_jk:ff3
+clear => q~reg0.ACLR
+clk => q~reg0.CLK
+j => Mux0.IN3
+k => Mux0.IN4
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|temporizador_3min|contador_decadico:mod10|ff_jk:ff4
+clear => q~reg0.ACLR
+clk => q~reg0.CLK
+j => Mux0.IN3
+k => Mux0.IN4
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|temporizador_3min|contador_modulo5:mod5
+clk => clk.IN3
+clear => clear_aux.IN1
+s[0] <= s[0].DB_MAX_OUTPUT_PORT_TYPE
+s[1] <= ff_jk:ff2.port4
+s[2] <= ff_jk:ff3.port4
+
+
+|temporizador_3min|contador_modulo5:mod5|ff_jk:ff1
+clear => q~reg0.ACLR
+clk => q~reg0.CLK
+j => Mux0.IN3
+k => Mux0.IN4
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|temporizador_3min|contador_modulo5:mod5|ff_jk:ff2
+clear => q~reg0.ACLR
+clk => q~reg0.CLK
+j => Mux0.IN3
+k => Mux0.IN4
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|temporizador_3min|contador_modulo5:mod5|ff_jk:ff3
+clear => q~reg0.ACLR
+clk => q~reg0.CLK
+j => Mux0.IN3
+k => Mux0.IN4
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|temporizador_3min|contador_modulo3:mod3
+clk => clk.IN2
+clear => clear_aux.IN1
+s[0] <= s[0].DB_MAX_OUTPUT_PORT_TYPE
+s[1] <= ff_jk:ff2.port4
+
+
+|temporizador_3min|contador_modulo3:mod3|ff_jk:ff1
+clear => q~reg0.ACLR
+clk => q~reg0.CLK
+j => Mux0.IN3
+k => Mux0.IN4
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|temporizador_3min|contador_modulo3:mod3|ff_jk:ff2
+clear => q~reg0.ACLR
+clk => q~reg0.CLK
+j => Mux0.IN3
+k => Mux0.IN4
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|temporizador_3min|contador_modulo2:mod2
+clk => clk.IN1
+clear => clear.IN1
+s <= ff_jk:ff1.port4
+
+
+|temporizador_3min|contador_modulo2:mod2|ff_jk:ff1
+clear => q~reg0.ACLR
+clk => q~reg0.CLK
+j => Mux0.IN3
+k => Mux0.IN4
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
