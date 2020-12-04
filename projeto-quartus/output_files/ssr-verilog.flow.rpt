@@ -1,5 +1,5 @@
 Flow report for ssr-verilog
-Fri Dec 04 00:35:50 2020
+Fri Dec 04 10:21:19 2020
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -41,18 +41,18 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Fri Dec 04 00:35:50 2020       ;
+; Flow Status                        ; Successful - Fri Dec 04 10:21:19 2020       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; ssr-verilog                                 ;
-; Top-level Entity Name              ; temporizador_3min                           ;
+; Top-level Entity Name              ; entrada_senha                               ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE75F23I8L                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 16                                          ;
-;     Total combinational functions  ; 16                                          ;
-;     Dedicated logic registers      ; 10                                          ;
-; Total registers                    ; 10                                          ;
-; Total pins                         ; 14                                          ;
+; Total logic elements               ; 74                                          ;
+;     Total combinational functions  ; 74                                          ;
+;     Dedicated logic registers      ; 43                                          ;
+; Total registers                    ; 43                                          ;
+; Total pins                         ; 10                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -65,34 +65,34 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/04/2020 00:34:57 ;
+; Start date & time ; 12/04/2020 10:20:39 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; ssr-verilog         ;
 +-------------------+---------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                                     ;
-+-------------------------------------+----------------------------------------+---------------+-------------------+-----------------------------------+
-; Assignment Name                     ; Value                                  ; Default Value ; Entity Name       ; Section Id                        ;
-+-------------------------------------+----------------------------------------+---------------+-------------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 229335796731092.160705289712704        ; --            ; --                ; --                                ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --                ; eda_board_design_timing           ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --                ; eda_board_design_boundary_scan    ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --                ; eda_board_design_signal_integrity ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --                ; eda_board_design_symbol           ;
-; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --            ; --                ; eda_simulation                    ;
-; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)              ; <None>        ; --                ; --                                ;
-; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --                ; eda_simulation                    ;
-; MAX_CORE_JUNCTION_TEMP              ; 100                                    ; --            ; --                ; --                                ;
-; MIN_CORE_JUNCTION_TEMP              ; -40                                    ; --            ; --                ; --                                ;
-; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.0V                                   ; --            ; --                ; --                                ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; temporizador_3min ; Top                               ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; temporizador_3min ; Top                               ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; temporizador_3min ; Top                               ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --                ; --                                ;
-; TOP_LEVEL_ENTITY                    ; temporizador_3min                      ; ssr-verilog   ; --                ; --                                ;
-+-------------------------------------+----------------------------------------+---------------+-------------------+-----------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                 ;
++-------------------------------------+----------------------------------------+---------------+---------------+-----------------------------------+
+; Assignment Name                     ; Value                                  ; Default Value ; Entity Name   ; Section Id                        ;
++-------------------------------------+----------------------------------------+---------------+---------------+-----------------------------------+
+; COMPILER_SIGNATURE_ID               ; 229335796731092.160708803900128        ; --            ; --            ; --                                ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --            ; eda_board_design_timing           ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --            ; eda_board_design_boundary_scan    ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --            ; eda_board_design_signal_integrity ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --            ; eda_board_design_symbol           ;
+; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --            ; --            ; eda_simulation                    ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)              ; <None>        ; --            ; --                                ;
+; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --            ; eda_simulation                    ;
+; MAX_CORE_JUNCTION_TEMP              ; 100                                    ; --            ; --            ; --                                ;
+; MIN_CORE_JUNCTION_TEMP              ; -40                                    ; --            ; --            ; --                                ;
+; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.0V                                   ; --            ; --            ; --                                ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; entrada_senha ; Top                               ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; entrada_senha ; Top                               ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; entrada_senha ; Top                               ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --            ; --                                ;
+; TOP_LEVEL_ENTITY                    ; entrada_senha                          ; ssr-verilog   ; --            ; --                                ;
++-------------------------------------+----------------------------------------+---------------+---------------+-----------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -100,10 +100,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:16     ; 1.0                     ; 4737 MB             ; 00:00:36                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4651 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4654 MB             ; 00:00:01                           ;
-; Total                ; 00:00:18     ; --                      ; --                  ; 00:00:38                           ;
+; Analysis & Synthesis ; 00:00:36     ; 1.0                     ; 4758 MB             ; 00:00:48                           ;
+; Total                ; 00:00:36     ; --                      ; --                  ; 00:00:48                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -113,8 +111,6 @@ https://fpgasoftware.intel.com/eula.
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
 ; Analysis & Synthesis ; DESKTOP-CHVV3F4  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-CHVV3F4  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-CHVV3F4  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -122,8 +118,6 @@ https://fpgasoftware.intel.com/eula.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off ssr-verilog -c ssr-verilog
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off ssr-verilog -c ssr-verilog --vector_source=C:/Users/Alysson/Documents/MeusProjetos/SSR-verilog/projeto-quartus/wf_temporizador_3min.vwf --testbench_file=C:/Users/Alysson/Documents/MeusProjetos/SSR-verilog/projeto-quartus/simulation/qsim/wf_temporizador_3min.vwf.vt
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/Users/Alysson/Documents/MeusProjetos/SSR-verilog/projeto-quartus/simulation/qsim/ ssr-verilog -c ssr-verilog
 
 
 

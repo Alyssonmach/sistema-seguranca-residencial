@@ -1,21 +1,17 @@
-|temporizador_3min
-clk => clk.IN1
-clr[0] => clr[0].IN1
-clr[1] => clr_aux2.IN1
-clr[2] => clr_aux1.IN1
-segmentos[0] << contador_modulo3:mod3.port2
-segmentos[1] << contador_modulo3:mod3.port2
-segmentos[2] << contador_modulo5:mod5.port2
-segmentos[3] << contador_modulo5:mod5.port2
-segmentos[4] << contador_modulo5:mod5.port2
-segmentos[5] << contador_decadico:mod10.port2
-segmentos[6] << contador_decadico:mod10.port2
-segmentos[7] << contador_decadico:mod10.port2
-segmentos[8] << contador_decadico:mod10.port2
-hab << contador_modulo2:mod2.port2
+|entrada_senha
+escolhe_digitos[0] => escolhe_digitos[0].IN1
+escolhe_digitos[1] => escolhe_digitos[1].IN1
+escolhe_digitos[2] => escolhe_digitos[2].IN1
+escolhe_digitos[3] => escolhe_digitos[3].IN1
+senha_original[0] => senha_original[0].IN1
+senha_original[1] => senha_original[1].IN1
+senha_original[2] => senha_original[2].IN1
+senha_original[3] => senha_original[3].IN1
+gerador_frequencia => and3.IN1
+habilitador << temporizador_3min:espera_habilitador.port3
 
 
-|temporizador_3min|contador_decadico:mod10
+|entrada_senha|contador_decadico:dig1_usuario
 clk => clk.IN4
 clear => clr_aux.IN1
 s[0] <= s[0].DB_MAX_OUTPUT_PORT_TYPE
@@ -24,7 +20,7 @@ s[2] <= ff_jk:ff3.port4
 s[3] <= ff_jk:ff4.port4
 
 
-|temporizador_3min|contador_decadico:mod10|ff_jk:ff1
+|entrada_senha|contador_decadico:dig1_usuario|ff_jk:ff1
 clear => q~reg0.ACLR
 clk => q~reg0.CLK
 j => Mux0.IN3
@@ -32,7 +28,7 @@ k => Mux0.IN4
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|temporizador_3min|contador_decadico:mod10|ff_jk:ff2
+|entrada_senha|contador_decadico:dig1_usuario|ff_jk:ff2
 clear => q~reg0.ACLR
 clk => q~reg0.CLK
 j => Mux0.IN3
@@ -40,7 +36,7 @@ k => Mux0.IN4
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|temporizador_3min|contador_decadico:mod10|ff_jk:ff3
+|entrada_senha|contador_decadico:dig1_usuario|ff_jk:ff3
 clear => q~reg0.ACLR
 clk => q~reg0.CLK
 j => Mux0.IN3
@@ -48,7 +44,7 @@ k => Mux0.IN4
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|temporizador_3min|contador_decadico:mod10|ff_jk:ff4
+|entrada_senha|contador_decadico:dig1_usuario|ff_jk:ff4
 clear => q~reg0.ACLR
 clk => q~reg0.CLK
 j => Mux0.IN3
@@ -56,7 +52,470 @@ k => Mux0.IN4
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|temporizador_3min|contador_modulo5:mod5
+|entrada_senha|display_7segmentos:dig1_display
+dados[0] => Decoder0.IN3
+dados[1] => Decoder0.IN2
+dados[2] => Decoder0.IN1
+dados[3] => Decoder0.IN0
+segmentos[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|entrada_senha|contador_decadico:dig1_sistema
+clk => clk.IN4
+clear => clr_aux.IN1
+s[0] <= s[0].DB_MAX_OUTPUT_PORT_TYPE
+s[1] <= ff_jk:ff2.port4
+s[2] <= ff_jk:ff3.port4
+s[3] <= ff_jk:ff4.port4
+
+
+|entrada_senha|contador_decadico:dig1_sistema|ff_jk:ff1
+clear => q~reg0.ACLR
+clk => q~reg0.CLK
+j => Mux0.IN3
+k => Mux0.IN4
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|entrada_senha|contador_decadico:dig1_sistema|ff_jk:ff2
+clear => q~reg0.ACLR
+clk => q~reg0.CLK
+j => Mux0.IN3
+k => Mux0.IN4
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|entrada_senha|contador_decadico:dig1_sistema|ff_jk:ff3
+clear => q~reg0.ACLR
+clk => q~reg0.CLK
+j => Mux0.IN3
+k => Mux0.IN4
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|entrada_senha|contador_decadico:dig1_sistema|ff_jk:ff4
+clear => q~reg0.ACLR
+clk => q~reg0.CLK
+j => Mux0.IN3
+k => Mux0.IN4
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|entrada_senha|comparador_4bits:digito1
+A[0] => xnor4.IN0
+A[1] => xnor3.IN0
+A[2] => xnor2.IN0
+A[3] => xnor1.IN0
+B[0] => xnor4.IN1
+B[1] => xnor3.IN1
+B[2] => xnor2.IN1
+B[3] => xnor1.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|entrada_senha|contador_decadico:dig2_usuario
+clk => clk.IN4
+clear => clr_aux.IN1
+s[0] <= s[0].DB_MAX_OUTPUT_PORT_TYPE
+s[1] <= ff_jk:ff2.port4
+s[2] <= ff_jk:ff3.port4
+s[3] <= ff_jk:ff4.port4
+
+
+|entrada_senha|contador_decadico:dig2_usuario|ff_jk:ff1
+clear => q~reg0.ACLR
+clk => q~reg0.CLK
+j => Mux0.IN3
+k => Mux0.IN4
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|entrada_senha|contador_decadico:dig2_usuario|ff_jk:ff2
+clear => q~reg0.ACLR
+clk => q~reg0.CLK
+j => Mux0.IN3
+k => Mux0.IN4
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|entrada_senha|contador_decadico:dig2_usuario|ff_jk:ff3
+clear => q~reg0.ACLR
+clk => q~reg0.CLK
+j => Mux0.IN3
+k => Mux0.IN4
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|entrada_senha|contador_decadico:dig2_usuario|ff_jk:ff4
+clear => q~reg0.ACLR
+clk => q~reg0.CLK
+j => Mux0.IN3
+k => Mux0.IN4
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|entrada_senha|display_7segmentos:dig2_display
+dados[0] => Decoder0.IN3
+dados[1] => Decoder0.IN2
+dados[2] => Decoder0.IN1
+dados[3] => Decoder0.IN0
+segmentos[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|entrada_senha|contador_decadico:dig2_sistema
+clk => clk.IN4
+clear => clr_aux.IN1
+s[0] <= s[0].DB_MAX_OUTPUT_PORT_TYPE
+s[1] <= ff_jk:ff2.port4
+s[2] <= ff_jk:ff3.port4
+s[3] <= ff_jk:ff4.port4
+
+
+|entrada_senha|contador_decadico:dig2_sistema|ff_jk:ff1
+clear => q~reg0.ACLR
+clk => q~reg0.CLK
+j => Mux0.IN3
+k => Mux0.IN4
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|entrada_senha|contador_decadico:dig2_sistema|ff_jk:ff2
+clear => q~reg0.ACLR
+clk => q~reg0.CLK
+j => Mux0.IN3
+k => Mux0.IN4
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|entrada_senha|contador_decadico:dig2_sistema|ff_jk:ff3
+clear => q~reg0.ACLR
+clk => q~reg0.CLK
+j => Mux0.IN3
+k => Mux0.IN4
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|entrada_senha|contador_decadico:dig2_sistema|ff_jk:ff4
+clear => q~reg0.ACLR
+clk => q~reg0.CLK
+j => Mux0.IN3
+k => Mux0.IN4
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|entrada_senha|comparador_4bits:digito2
+A[0] => xnor4.IN0
+A[1] => xnor3.IN0
+A[2] => xnor2.IN0
+A[3] => xnor1.IN0
+B[0] => xnor4.IN1
+B[1] => xnor3.IN1
+B[2] => xnor2.IN1
+B[3] => xnor1.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|entrada_senha|contador_decadico:dig3_usuario
+clk => clk.IN4
+clear => clr_aux.IN1
+s[0] <= s[0].DB_MAX_OUTPUT_PORT_TYPE
+s[1] <= ff_jk:ff2.port4
+s[2] <= ff_jk:ff3.port4
+s[3] <= ff_jk:ff4.port4
+
+
+|entrada_senha|contador_decadico:dig3_usuario|ff_jk:ff1
+clear => q~reg0.ACLR
+clk => q~reg0.CLK
+j => Mux0.IN3
+k => Mux0.IN4
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|entrada_senha|contador_decadico:dig3_usuario|ff_jk:ff2
+clear => q~reg0.ACLR
+clk => q~reg0.CLK
+j => Mux0.IN3
+k => Mux0.IN4
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|entrada_senha|contador_decadico:dig3_usuario|ff_jk:ff3
+clear => q~reg0.ACLR
+clk => q~reg0.CLK
+j => Mux0.IN3
+k => Mux0.IN4
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|entrada_senha|contador_decadico:dig3_usuario|ff_jk:ff4
+clear => q~reg0.ACLR
+clk => q~reg0.CLK
+j => Mux0.IN3
+k => Mux0.IN4
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|entrada_senha|display_7segmentos:dig3_display
+dados[0] => Decoder0.IN3
+dados[1] => Decoder0.IN2
+dados[2] => Decoder0.IN1
+dados[3] => Decoder0.IN0
+segmentos[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|entrada_senha|contador_decadico:dig3_sistema
+clk => clk.IN4
+clear => clr_aux.IN1
+s[0] <= s[0].DB_MAX_OUTPUT_PORT_TYPE
+s[1] <= ff_jk:ff2.port4
+s[2] <= ff_jk:ff3.port4
+s[3] <= ff_jk:ff4.port4
+
+
+|entrada_senha|contador_decadico:dig3_sistema|ff_jk:ff1
+clear => q~reg0.ACLR
+clk => q~reg0.CLK
+j => Mux0.IN3
+k => Mux0.IN4
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|entrada_senha|contador_decadico:dig3_sistema|ff_jk:ff2
+clear => q~reg0.ACLR
+clk => q~reg0.CLK
+j => Mux0.IN3
+k => Mux0.IN4
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|entrada_senha|contador_decadico:dig3_sistema|ff_jk:ff3
+clear => q~reg0.ACLR
+clk => q~reg0.CLK
+j => Mux0.IN3
+k => Mux0.IN4
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|entrada_senha|contador_decadico:dig3_sistema|ff_jk:ff4
+clear => q~reg0.ACLR
+clk => q~reg0.CLK
+j => Mux0.IN3
+k => Mux0.IN4
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|entrada_senha|comparador_4bits:digito3
+A[0] => xnor4.IN0
+A[1] => xnor3.IN0
+A[2] => xnor2.IN0
+A[3] => xnor1.IN0
+B[0] => xnor4.IN1
+B[1] => xnor3.IN1
+B[2] => xnor2.IN1
+B[3] => xnor1.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|entrada_senha|contador_decadico:dig4_usuario
+clk => clk.IN4
+clear => clr_aux.IN1
+s[0] <= s[0].DB_MAX_OUTPUT_PORT_TYPE
+s[1] <= ff_jk:ff2.port4
+s[2] <= ff_jk:ff3.port4
+s[3] <= ff_jk:ff4.port4
+
+
+|entrada_senha|contador_decadico:dig4_usuario|ff_jk:ff1
+clear => q~reg0.ACLR
+clk => q~reg0.CLK
+j => Mux0.IN3
+k => Mux0.IN4
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|entrada_senha|contador_decadico:dig4_usuario|ff_jk:ff2
+clear => q~reg0.ACLR
+clk => q~reg0.CLK
+j => Mux0.IN3
+k => Mux0.IN4
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|entrada_senha|contador_decadico:dig4_usuario|ff_jk:ff3
+clear => q~reg0.ACLR
+clk => q~reg0.CLK
+j => Mux0.IN3
+k => Mux0.IN4
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|entrada_senha|contador_decadico:dig4_usuario|ff_jk:ff4
+clear => q~reg0.ACLR
+clk => q~reg0.CLK
+j => Mux0.IN3
+k => Mux0.IN4
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|entrada_senha|display_7segmentos:dig4_display
+dados[0] => Decoder0.IN3
+dados[1] => Decoder0.IN2
+dados[2] => Decoder0.IN1
+dados[3] => Decoder0.IN0
+segmentos[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|entrada_senha|contador_decadico:dig4_sistema
+clk => clk.IN4
+clear => clr_aux.IN1
+s[0] <= s[0].DB_MAX_OUTPUT_PORT_TYPE
+s[1] <= ff_jk:ff2.port4
+s[2] <= ff_jk:ff3.port4
+s[3] <= ff_jk:ff4.port4
+
+
+|entrada_senha|contador_decadico:dig4_sistema|ff_jk:ff1
+clear => q~reg0.ACLR
+clk => q~reg0.CLK
+j => Mux0.IN3
+k => Mux0.IN4
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|entrada_senha|contador_decadico:dig4_sistema|ff_jk:ff2
+clear => q~reg0.ACLR
+clk => q~reg0.CLK
+j => Mux0.IN3
+k => Mux0.IN4
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|entrada_senha|contador_decadico:dig4_sistema|ff_jk:ff3
+clear => q~reg0.ACLR
+clk => q~reg0.CLK
+j => Mux0.IN3
+k => Mux0.IN4
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|entrada_senha|contador_decadico:dig4_sistema|ff_jk:ff4
+clear => q~reg0.ACLR
+clk => q~reg0.CLK
+j => Mux0.IN3
+k => Mux0.IN4
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|entrada_senha|comparador_4bits:digito4
+A[0] => xnor4.IN0
+A[1] => xnor3.IN0
+A[2] => xnor2.IN0
+A[3] => xnor1.IN0
+B[0] => xnor4.IN1
+B[1] => xnor3.IN1
+B[2] => xnor2.IN1
+B[3] => xnor1.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|entrada_senha|contador_modulo2:estado_saida
+clk => clk.IN1
+clear => clear.IN1
+s <= ff_jk:ff1.port4
+
+
+|entrada_senha|contador_modulo2:estado_saida|ff_jk:ff1
+clear => q~reg0.ACLR
+clk => q~reg0.CLK
+j => Mux0.IN3
+k => Mux0.IN4
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|entrada_senha|temporizador_3min:espera_habilitador
+clk => clk.IN1
+clr[0] => clr[0].IN1
+clr[1] => clr_aux2.IN1
+clr[2] => clr_aux1.IN1
+segmentos[0] <= contador_modulo3:mod3.port2
+segmentos[1] <= contador_modulo3:mod3.port2
+segmentos[2] <= contador_modulo5:mod5.port2
+segmentos[3] <= contador_modulo5:mod5.port2
+segmentos[4] <= contador_modulo5:mod5.port2
+segmentos[5] <= contador_decadico:mod10.port2
+segmentos[6] <= contador_decadico:mod10.port2
+segmentos[7] <= contador_decadico:mod10.port2
+segmentos[8] <= contador_decadico:mod10.port2
+hab <= contador_modulo2:mod2.port2
+
+
+|entrada_senha|temporizador_3min:espera_habilitador|contador_decadico:mod10
+clk => clk.IN4
+clear => clr_aux.IN1
+s[0] <= s[0].DB_MAX_OUTPUT_PORT_TYPE
+s[1] <= ff_jk:ff2.port4
+s[2] <= ff_jk:ff3.port4
+s[3] <= ff_jk:ff4.port4
+
+
+|entrada_senha|temporizador_3min:espera_habilitador|contador_decadico:mod10|ff_jk:ff1
+clear => q~reg0.ACLR
+clk => q~reg0.CLK
+j => Mux0.IN3
+k => Mux0.IN4
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|entrada_senha|temporizador_3min:espera_habilitador|contador_decadico:mod10|ff_jk:ff2
+clear => q~reg0.ACLR
+clk => q~reg0.CLK
+j => Mux0.IN3
+k => Mux0.IN4
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|entrada_senha|temporizador_3min:espera_habilitador|contador_decadico:mod10|ff_jk:ff3
+clear => q~reg0.ACLR
+clk => q~reg0.CLK
+j => Mux0.IN3
+k => Mux0.IN4
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|entrada_senha|temporizador_3min:espera_habilitador|contador_decadico:mod10|ff_jk:ff4
+clear => q~reg0.ACLR
+clk => q~reg0.CLK
+j => Mux0.IN3
+k => Mux0.IN4
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|entrada_senha|temporizador_3min:espera_habilitador|contador_modulo5:mod5
 clk => clk.IN3
 clear => clear_aux.IN1
 s[0] <= s[0].DB_MAX_OUTPUT_PORT_TYPE
@@ -64,7 +523,7 @@ s[1] <= ff_jk:ff2.port4
 s[2] <= ff_jk:ff3.port4
 
 
-|temporizador_3min|contador_modulo5:mod5|ff_jk:ff1
+|entrada_senha|temporizador_3min:espera_habilitador|contador_modulo5:mod5|ff_jk:ff1
 clear => q~reg0.ACLR
 clk => q~reg0.CLK
 j => Mux0.IN3
@@ -72,7 +531,7 @@ k => Mux0.IN4
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|temporizador_3min|contador_modulo5:mod5|ff_jk:ff2
+|entrada_senha|temporizador_3min:espera_habilitador|contador_modulo5:mod5|ff_jk:ff2
 clear => q~reg0.ACLR
 clk => q~reg0.CLK
 j => Mux0.IN3
@@ -80,7 +539,7 @@ k => Mux0.IN4
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|temporizador_3min|contador_modulo5:mod5|ff_jk:ff3
+|entrada_senha|temporizador_3min:espera_habilitador|contador_modulo5:mod5|ff_jk:ff3
 clear => q~reg0.ACLR
 clk => q~reg0.CLK
 j => Mux0.IN3
@@ -88,14 +547,14 @@ k => Mux0.IN4
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|temporizador_3min|contador_modulo3:mod3
+|entrada_senha|temporizador_3min:espera_habilitador|contador_modulo3:mod3
 clk => clk.IN2
 clear => clear_aux.IN1
 s[0] <= s[0].DB_MAX_OUTPUT_PORT_TYPE
 s[1] <= ff_jk:ff2.port4
 
 
-|temporizador_3min|contador_modulo3:mod3|ff_jk:ff1
+|entrada_senha|temporizador_3min:espera_habilitador|contador_modulo3:mod3|ff_jk:ff1
 clear => q~reg0.ACLR
 clk => q~reg0.CLK
 j => Mux0.IN3
@@ -103,7 +562,7 @@ k => Mux0.IN4
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|temporizador_3min|contador_modulo3:mod3|ff_jk:ff2
+|entrada_senha|temporizador_3min:espera_habilitador|contador_modulo3:mod3|ff_jk:ff2
 clear => q~reg0.ACLR
 clk => q~reg0.CLK
 j => Mux0.IN3
@@ -111,17 +570,59 @@ k => Mux0.IN4
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|temporizador_3min|contador_modulo2:mod2
+|entrada_senha|temporizador_3min:espera_habilitador|contador_modulo2:mod2
 clk => clk.IN1
 clear => clear.IN1
 s <= ff_jk:ff1.port4
 
 
-|temporizador_3min|contador_modulo2:mod2|ff_jk:ff1
+|entrada_senha|temporizador_3min:espera_habilitador|contador_modulo2:mod2|ff_jk:ff1
 clear => q~reg0.ACLR
 clk => q~reg0.CLK
 j => Mux0.IN3
 k => Mux0.IN4
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|entrada_senha|display_7segmentos:minutos
+dados[0] => Decoder0.IN3
+dados[1] => Decoder0.IN2
+dados[2] => Decoder0.IN1
+dados[3] => Decoder0.IN0
+segmentos[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|entrada_senha|display_7segmentos:segundos1
+dados[0] => Decoder0.IN3
+dados[1] => Decoder0.IN2
+dados[2] => Decoder0.IN1
+dados[3] => Decoder0.IN0
+segmentos[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|entrada_senha|display_7segmentos:segundos2
+dados[0] => Decoder0.IN3
+dados[1] => Decoder0.IN2
+dados[2] => Decoder0.IN1
+dados[3] => Decoder0.IN0
+segmentos[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
