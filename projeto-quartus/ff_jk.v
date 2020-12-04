@@ -7,10 +7,12 @@ module ff_jk(clear, clk, j, k, q);
   
    always @ (posedge clk, posedge clear)
 		begin
+		   // entrada sincrona do clear
 			if(clear) q <= 1'b0;
 			else 
 				begin 
 					case({j, k})
+					   // casos de estado do flip-flop jk
 						0: q = q;
 						1: q = 0;
 						2: q = 1;

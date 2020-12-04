@@ -1,4 +1,4 @@
-// modulo contador modulo 6
+// modulo contador modulo 5
 module contador_modulo5(clk, clear, s);
 
 	input clk, clear;
@@ -6,14 +6,12 @@ module contador_modulo5(clk, clear, s);
 	
 	wire and1, and2;
 	wire clear_aux;
-	
-	// parte sequencial do contador sincrono modulo 6
+	 
 	ff_jk ff1(clear_aux, clk, 1, 1, s[0]);
 	ff_jk ff2(clear_aux, clk, s[0], s[0], s[1]);
 	assign and1 = s[0] & s[1];
 	ff_jk ff3(clear_aux, clk, and1, and1, s[2]);
 	
-	// parte combinacional do contador sincrono modulo 6
 	assign and2 = s[1] & s[2];
 	assign clear_aux = clear | and2;
 	

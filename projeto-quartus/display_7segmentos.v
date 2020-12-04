@@ -5,6 +5,7 @@ module display_7segmentos(dados, segmentos);
 	output reg [6:0]segmentos;
 	
 	always @(*)
+		// aciona os segmentos a cada digito binario com 4 bits
 		case(dados)
 		0: segmentos = 7'b1111110;
 		1: segmentos = 7'b0110000;

@@ -7,11 +7,9 @@ module contador_modulo3(clk, clear, s);
 	wire and1;
 	wire clear_aux;
 	
-	// parte sequencial do contador sincrono modulo 3
 	ff_jk ff1(clear_aux, clk, 1, 1, s[0]);
 	ff_jk ff2(clear_aux, clk, s[0], s[0], s[1]);
 	
-	// parte combinacional do contador sincrono modulo 3
 	assign and1 = s[0] & s[1];
 	assign clear_aux = and1 | clear;
 	
