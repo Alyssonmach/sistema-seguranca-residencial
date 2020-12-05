@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ssr-verilog
-Fri Dec 04 11:10:56 2020
+Fri Dec 04 21:54:09 2020
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -14,11 +14,10 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Port Connectivity Checks: "ff_jk:ff1"
- 10. Post-Synthesis Netlist Statistics for Top Partition
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
- 13. Analysis & Synthesis Suppressed Messages
+  9. Post-Synthesis Netlist Statistics for Top Partition
+ 10. Elapsed Time Per Partition
+ 11. Analysis & Synthesis Messages
+ 12. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -45,16 +44,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Dec 04 11:10:56 2020       ;
+; Analysis & Synthesis Status        ; Successful - Fri Dec 04 21:54:09 2020       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; ssr-verilog                                 ;
-; Top-level Entity Name              ; contador_modulo3                            ;
+; Top-level Entity Name              ; sistema_alarme                              ;
 ; Family                             ; Cyclone IV E                                ;
 ; Total logic elements               ; 3                                           ;
 ;     Total combinational functions  ; 3                                           ;
-;     Dedicated logic registers      ; 2                                           ;
-; Total registers                    ; 2                                           ;
-; Total pins                         ; 4                                           ;
+;     Dedicated logic registers      ; 0                                           ;
+; Total registers                    ; 0                                           ;
+; Total pins                         ; 9                                           ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -68,7 +67,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CE75F23I8L      ;                    ;
-; Top-level entity name                                            ; contador_modulo3   ; ssr-verilog        ;
+; Top-level entity name                                            ; sistema_alarme     ; ssr-verilog        ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -157,65 +156,64 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 2           ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                         ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                           ; Library ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------------------------------------------------+---------+
-; ff_jk.v                          ; yes             ; User Verilog HDL File  ; C:/Users/Alysson/Documents/MeusProjetos/SSR-verilog/projeto-quartus/ff_jk.v            ;         ;
-; contador_modulo3.v               ; yes             ; User Verilog HDL File  ; C:/Users/Alysson/Documents/MeusProjetos/SSR-verilog/projeto-quartus/contador_modulo3.v ;         ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                       ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                         ; Library ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------------+---------+
+; and_3entradas.v                  ; yes             ; User Verilog HDL File  ; C:/Users/Alysson/Documents/MeusProjetos/SSR-verilog/projeto-quartus/and_3entradas.v  ;         ;
+; or_6entradas.v                   ; yes             ; User Verilog HDL File  ; C:/Users/Alysson/Documents/MeusProjetos/SSR-verilog/projeto-quartus/or_6entradas.v   ;         ;
+; sistema_alarme.v                 ; yes             ; User Verilog HDL File  ; C:/Users/Alysson/Documents/MeusProjetos/SSR-verilog/projeto-quartus/sistema_alarme.v ;         ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary               ;
-+---------------------------------------------+-------------+
-; Resource                                    ; Usage       ;
-+---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 3           ;
-;                                             ;             ;
-; Total combinational functions               ; 3           ;
-; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 0           ;
-;     -- 3 input functions                    ; 1           ;
-;     -- <=2 input functions                  ; 2           ;
-;                                             ;             ;
-; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 3           ;
-;     -- arithmetic mode                      ; 0           ;
-;                                             ;             ;
-; Total registers                             ; 2           ;
-;     -- Dedicated logic registers            ; 2           ;
-;     -- I/O registers                        ; 0           ;
-;                                             ;             ;
-; I/O pins                                    ; 4           ;
-;                                             ;             ;
-; Embedded Multiplier 9-bit elements          ; 0           ;
-;                                             ;             ;
-; Maximum fan-out node                        ; ff_jk:ff1|q ;
-; Maximum fan-out                             ; 4           ;
-; Total fan-out                               ; 18          ;
-; Average fan-out                             ; 1.38        ;
-+---------------------------------------------+-------------+
++-------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary           ;
++---------------------------------------------+---------+
+; Resource                                    ; Usage   ;
++---------------------------------------------+---------+
+; Estimated Total logic elements              ; 3       ;
+;                                             ;         ;
+; Total combinational functions               ; 3       ;
+; Logic element usage by number of LUT inputs ;         ;
+;     -- 4 input functions                    ; 3       ;
+;     -- 3 input functions                    ; 0       ;
+;     -- <=2 input functions                  ; 0       ;
+;                                             ;         ;
+; Logic elements by mode                      ;         ;
+;     -- normal mode                          ; 3       ;
+;     -- arithmetic mode                      ; 0       ;
+;                                             ;         ;
+; Total registers                             ; 0       ;
+;     -- Dedicated logic registers            ; 0       ;
+;     -- I/O registers                        ; 0       ;
+;                                             ;         ;
+; I/O pins                                    ; 9       ;
+;                                             ;         ;
+; Embedded Multiplier 9-bit elements          ; 0       ;
+;                                             ;         ;
+; Maximum fan-out node                        ; Y~input ;
+; Maximum fan-out                             ; 2       ;
+; Total fan-out                               ; 22      ;
+; Average fan-out                             ; 1.05    ;
++---------------------------------------------+---------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                   ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------+------------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name         ; Entity Name      ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------+------------------+--------------+
-; |contador_modulo3          ; 3 (1)               ; 2 (0)                     ; 0           ; 0            ; 0       ; 0         ; 4    ; 0            ; |contador_modulo3           ; contador_modulo3 ; work         ;
-;    |ff_jk:ff1|             ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |contador_modulo3|ff_jk:ff1 ; ff_jk            ; work         ;
-;    |ff_jk:ff2|             ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |contador_modulo3|ff_jk:ff2 ; ff_jk            ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------+------------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                    ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------+----------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name            ; Entity Name    ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------+----------------+--------------+
+; |sistema_alarme            ; 3 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 9    ; 0            ; |sistema_alarme                ; sistema_alarme ; work         ;
+;    |or_6entradas:K|        ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sistema_alarme|or_6entradas:K ; or_6entradas   ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------+----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -224,26 +222,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 2     ;
+; Total registers                              ; 0     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 2     ;
+; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "ff_jk:ff1"                                                                                                                                                                         ;
-+-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                                                                                                                                                            ;
-+-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; j     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; j[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
-; k     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; k[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
-+-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -251,17 +237,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 4                           ;
-; cycloneiii_ff         ; 2                           ;
-;     CLR               ; 2                           ;
+; boundary_port         ; 9                           ;
 ; cycloneiii_lcell_comb ; 3                           ;
 ;     normal            ; 3                           ;
-;         1 data inputs ; 1                           ;
-;         2 data inputs ; 1                           ;
-;         3 data inputs ; 1                           ;
+;         4 data inputs ; 3                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 1.00                        ;
-; Average LUT depth     ; 0.86                        ;
+; Max LUT depth         ; 3.00                        ;
+; Average LUT depth     ; 2.55                        ;
 +-----------------------+-----------------------------+
 
 
@@ -270,7 +252,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -280,7 +262,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Fri Dec 04 11:10:31 2020
+    Info: Processing started: Fri Dec 04 21:53:51 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ssr-verilog -c ssr-verilog
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -302,22 +284,30 @@ Info (12021): Found 1 design units, including 1 entities, in source file contado
     Info (12023): Found entity 1: contador_modulo3 File: C:/Users/Alysson/Documents/MeusProjetos/SSR-verilog/projeto-quartus/contador_modulo3.v Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file entrada_senha.v
     Info (12023): Found entity 1: entrada_senha File: C:/Users/Alysson/Documents/MeusProjetos/SSR-verilog/projeto-quartus/entrada_senha.v Line: 2
-Info (12127): Elaborating entity "contador_modulo3" for the top level hierarchy
-Info (12128): Elaborating entity "ff_jk" for hierarchy "ff_jk:ff1" File: C:/Users/Alysson/Documents/MeusProjetos/SSR-verilog/projeto-quartus/contador_modulo3.v Line: 11
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (12021): Found 1 design units, including 1 entities, in source file ssr.v
+    Info (12023): Found entity 1: ssr File: C:/Users/Alysson/Documents/MeusProjetos/SSR-verilog/projeto-quartus/ssr.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file and_3entradas.v
+    Info (12023): Found entity 1: and_3entradas File: C:/Users/Alysson/Documents/MeusProjetos/SSR-verilog/projeto-quartus/and_3entradas.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file or_6entradas.v
+    Info (12023): Found entity 1: or_6entradas File: C:/Users/Alysson/Documents/MeusProjetos/SSR-verilog/projeto-quartus/or_6entradas.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file sistema_alarme.v
+    Info (12023): Found entity 1: sistema_alarme File: C:/Users/Alysson/Documents/MeusProjetos/SSR-verilog/projeto-quartus/sistema_alarme.v Line: 2
+Info (12127): Elaborating entity "sistema_alarme" for the top level hierarchy
+Info (12128): Elaborating entity "and_3entradas" for hierarchy "and_3entradas:Z1" File: C:/Users/Alysson/Documents/MeusProjetos/SSR-verilog/projeto-quartus/sistema_alarme.v Line: 12
+Info (12128): Elaborating entity "or_6entradas" for hierarchy "or_6entradas:K" File: C:/Users/Alysson/Documents/MeusProjetos/SSR-verilog/projeto-quartus/sistema_alarme.v Line: 19
 Info (286030): Timing-Driven Synthesis is running
 Info (144001): Generated suppressed messages file C:/Users/Alysson/Documents/MeusProjetos/SSR-verilog/projeto-quartus/output_files/ssr-verilog.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 7 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 2 input pins
-    Info (21059): Implemented 2 output pins
+Info (21057): Implemented 12 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 8 input pins
+    Info (21059): Implemented 1 output pins
     Info (21061): Implemented 3 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 4747 megabytes
-    Info: Processing ended: Fri Dec 04 11:10:56 2020
-    Info: Elapsed time: 00:00:25
-    Info: Total CPU time (on all processors): 00:00:35
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4743 megabytes
+    Info: Processing ended: Fri Dec 04 21:54:09 2020
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:40
 
 
 +------------------------------------------+

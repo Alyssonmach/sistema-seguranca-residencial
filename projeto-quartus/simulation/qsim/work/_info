@@ -377,6 +377,52 @@ R20
 !i113 1
 R10
 R11
+vsistema_alarme
+!s110 1607129811
+!i10b 1
+!s100 <HH]M`AFOZz_afULRe;Al1
+R2
+IOPfD:S^cZ[c0zFKAWkh8U3
+R3
+R0
+w1607129805
+R4
+R5
+!i122 46
+L0 32 174
+R6
+r1
+!s85 0
+31
+!s108 1607129810.000000
+R8
+R9
+!i113 1
+R10
+R11
+vsistema_alarme_vlg_vec_tst
+!s110 1607129812
+!i10b 1
+!s100 ZQkm<IlhQ6WAeZ@J01]Uz2
+R2
+IN64h6kHdG4;POaUNXOiIP1
+R3
+R0
+w1607129803
+8wf_sistema_alarme.vwf.vt
+Fwf_sistema_alarme.vwf.vt
+!i122 47
+L0 30 76
+R6
+r1
+!s85 0
+31
+!s108 1607129811.000000
+!s107 wf_sistema_alarme.vwf.vt|
+!s90 -work|work|wf_sistema_alarme.vwf.vt|
+!i113 1
+R10
+R11
 vtemporizador_3min
 Z21 !s110 1607052954
 !i10b 1

@@ -7,7 +7,7 @@ Note: if both ModelSim-Altera and ModelSim executables are available, ModelSim-A
 
 **** Generating the ModelSim Testbench ****
 
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off ssr-verilog -c ssr-verilog --vector_source="C:/Users/Alysson/Documents/MeusProjetos/SSR-verilog/projeto-quartus/wf_temporizador_3min.vwf" --testbench_file="C:/Users/Alysson/Documents/MeusProjetos/SSR-verilog/projeto-quartus/simulation/qsim/wf_temporizador_3min.vwf.vt"
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off ssr-verilog -c ssr-verilog --vector_source="C:/Users/Alysson/Documents/MeusProjetos/SSR-verilog/projeto-quartus/wf_sistema_alarme.vwf" --testbench_file="C:/Users/Alysson/Documents/MeusProjetos/SSR-verilog/projeto-quartus/simulation/qsim/wf_sistema_alarme.vwf.vt"
 
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
@@ -26,8 +26,8 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Fri Dec 04 00:35:47 2020
-Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off ssr-verilog -c ssr-verilog --vector_source=C:/Users/Alysson/Documents/MeusProjetos/SSR-verilog/projeto-quartus/wf_temporizador_3min.vwf --testbench_file=C:/Users/Alysson/Documents/MeusProjetos/SSR-verilog/projeto-quartus/simulation/qsim/wf_temporizador_3min.vwf.vt
+    Info: Processing started: Fri Dec 04 21:56:41 2020
+Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off ssr-verilog -c ssr-verilog --vector_source=C:/Users/Alysson/Documents/MeusProjetos/SSR-verilog/projeto-quartus/wf_sistema_alarme.vwf --testbench_file=C:/Users/Alysson/Documents/MeusProjetos/SSR-verilog/projeto-quartus/simulation/qsim/wf_sistema_alarme.vwf.vt
 Info (119006): Selected device EP4CE75F23I8L for design "ssr-verilog"
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 
@@ -56,15 +56,15 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Fri Dec 04 00:35:49 2020
+    Info: Processing started: Fri Dec 04 21:56:43 2020
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/Users/Alysson/Documents/MeusProjetos/SSR-verilog/projeto-quartus/simulation/qsim/ ssr-verilog -c ssr-verilog
 Info (119006): Selected device EP4CE75F23I8L for design "ssr-verilog"
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file ssr-verilog.vo in folder "C:/Users/Alysson/Documents/MeusProjetos/SSR-verilog/projeto-quartus/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4654 megabytes
-    Info: Processing ended: Fri Dec 04 00:35:50 2020
-    Info: Elapsed time: 00:00:01
+    Info: Peak virtual memory: 4655 megabytes
+    Info: Processing ended: Fri Dec 04 21:56:45 2020
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 
 Completed successfully. 
@@ -81,6 +81,7 @@ C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/vsim -c -do ssr-verilog.do
 
 Reading pref.tcl
 
+
 # 2020.1
 
 
@@ -89,56 +90,54 @@ Reading pref.tcl
 # ** Warning: (vlib-34) Library already exists at "work".
 
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 00:35:53 on Dec 04,2020
+
+# Start time: 21:56:50 on Dec 04,2020
 # vlog -work work ssr-verilog.vo 
 
-# -- Compiling module temporizador_3min
+# -- Compiling module sistema_alarme
 
 # 
 # Top level modules:
-# 	temporizador_3min
-
-# End time: 00:35:54 on Dec 04,2020, Elapsed time: 0:00:01
+# 	sistema_alarme
+# End time: 21:56:51 on Dec 04,2020, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
+
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:56:51 on Dec 04,2020
+# vlog -work work wf_sistema_alarme.vwf.vt 
+# -- Compiling module sistema_alarme_vlg_vec_tst
 
-# Start time: 00:35:54 on Dec 04,2020
-# vlog -work work wf_temporizador_3min.vwf.vt 
-# -- Compiling module temporizador_3min_vlg_vec_tst
 # 
 # Top level modules:
-# 	temporizador_3min_vlg_vec_tst
-
-# End time: 00:35:54 on Dec 04,2020, Elapsed time: 0:00:00
+# 	sistema_alarme_vlg_vec_tst
+# End time: 21:56:52 on Dec 04,2020, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 
-# vsim -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.temporizador_3min_vlg_vec_tst 
-# Start time: 00:35:55 on Dec 04,2020
-# Loading work.temporizador_3min_vlg_vec_tst
-# Loading work.temporizador_3min
+# vsim -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.sistema_alarme_vlg_vec_tst 
+# Start time: 21:56:52 on Dec 04,2020
+# Loading work.sistema_alarme_vlg_vec_tst
+# Loading work.sistema_alarme
 # Loading cycloneive_ver.cycloneive_io_obuf
 # Loading cycloneive_ver.cycloneive_io_ibuf
 # Loading cycloneive_ver.cycloneive_lcell_comb
-# Loading altera_ver.dffeas
-# Loading altera_ver.PRIM_GDFF_LOW
 # after#25
 
-# ** Note: $finish    : wf_temporizador_3min.vwf.vt(49)
-#    Time: 100 us  Iteration: 0  Instance: /temporizador_3min_vlg_vec_tst
-# End time: 00:35:56 on Dec 04,2020, Elapsed time: 0:00:01
+# ** Note: $finish    : wf_sistema_alarme.vwf.vt(53)
+#    Time: 10 us  Iteration: 0  Instance: /sistema_alarme_vlg_vec_tst
+# End time: 21:56:55 on Dec 04,2020, Elapsed time: 0:00:03
 # Errors: 0, Warnings: 0
 
 Completed successfully. 
 
 **** Converting ModelSim VCD to vector waveform ****
 
-Reading C:/Users/Alysson/Documents/MeusProjetos/SSR-verilog/projeto-quartus/wf_temporizador_3min.vwf...
+Reading C:/Users/Alysson/Documents/MeusProjetos/SSR-verilog/projeto-quartus/wf_sistema_alarme.vwf...
 
 Reading C:/Users/Alysson/Documents/MeusProjetos/SSR-verilog/projeto-quartus/simulation/qsim/ssr-verilog.msim.vcd...
 
 Processing channel transitions... 
 
-Writing the resulting VWF to C:/Users/Alysson/Documents/MeusProjetos/SSR-verilog/projeto-quartus/simulation/qsim/ssr-verilog_20201204003556.sim.vwf
+Writing the resulting VWF to C:/Users/Alysson/Documents/MeusProjetos/SSR-verilog/projeto-quartus/simulation/qsim/ssr-verilog_20201204215655.sim.vwf
 
 Finished VCD to VWF conversion.
 

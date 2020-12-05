@@ -1,34 +1,32 @@
 # do ssr-verilog.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 00:35:53 on Dec 04,2020
+# Start time: 21:56:50 on Dec 04,2020
 # vlog -work work ssr-verilog.vo 
-# -- Compiling module temporizador_3min
+# -- Compiling module sistema_alarme
 # 
 # Top level modules:
-# 	temporizador_3min
-# End time: 00:35:54 on Dec 04,2020, Elapsed time: 0:00:01
+# 	sistema_alarme
+# End time: 21:56:51 on Dec 04,2020, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 00:35:54 on Dec 04,2020
-# vlog -work work wf_temporizador_3min.vwf.vt 
-# -- Compiling module temporizador_3min_vlg_vec_tst
+# Start time: 21:56:51 on Dec 04,2020
+# vlog -work work wf_sistema_alarme.vwf.vt 
+# -- Compiling module sistema_alarme_vlg_vec_tst
 # 
 # Top level modules:
-# 	temporizador_3min_vlg_vec_tst
-# End time: 00:35:54 on Dec 04,2020, Elapsed time: 0:00:00
+# 	sistema_alarme_vlg_vec_tst
+# End time: 21:56:52 on Dec 04,2020, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
-# vsim -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.temporizador_3min_vlg_vec_tst 
-# Start time: 00:35:55 on Dec 04,2020
-# Loading work.temporizador_3min_vlg_vec_tst
-# Loading work.temporizador_3min
+# vsim -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.sistema_alarme_vlg_vec_tst 
+# Start time: 21:56:52 on Dec 04,2020
+# Loading work.sistema_alarme_vlg_vec_tst
+# Loading work.sistema_alarme
 # Loading cycloneive_ver.cycloneive_io_obuf
 # Loading cycloneive_ver.cycloneive_io_ibuf
 # Loading cycloneive_ver.cycloneive_lcell_comb
-# Loading altera_ver.dffeas
-# Loading altera_ver.PRIM_GDFF_LOW
 # after#25
-# ** Note: $finish    : wf_temporizador_3min.vwf.vt(49)
-#    Time: 100 us  Iteration: 0  Instance: /temporizador_3min_vlg_vec_tst
-# End time: 00:35:56 on Dec 04,2020, Elapsed time: 0:00:01
+# ** Note: $finish    : wf_sistema_alarme.vwf.vt(53)
+#    Time: 10 us  Iteration: 0  Instance: /sistema_alarme_vlg_vec_tst
+# End time: 21:56:55 on Dec 04,2020, Elapsed time: 0:00:03
 # Errors: 0, Warnings: 0
