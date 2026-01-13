@@ -19,7 +19,3 @@ O sistema de segurança residencial implementado com linguagem de descrição de
 
 ![Diagrama Lógico Completo](imagens-projeto/diagrama-logico-completo.png)
 
-### Alguma Dúvida? Entre em contato comigo:
-- [Me envie um e-mail](alysson.barbosa@ee.ufcg.edu.br)
-
-
